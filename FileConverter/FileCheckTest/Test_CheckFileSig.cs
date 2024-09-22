@@ -38,7 +38,7 @@ namespace FileCheckTest
         [DynamicData(nameof(GetInvalidFiles), DynamicDataSourceType.Method)]
         public void CheckFileSig_NoMatchFound(string fp)
         {
-            string res = FolderScanner.CheckFileSig(fp);
+            string res = Scanner.CheckFileSig(fp);
 
             Assert.IsTrue(res.Contains("no known file signature"));
         }
@@ -51,7 +51,7 @@ namespace FileCheckTest
         [DynamicData(nameof(GetValidFiles), DynamicDataSourceType.Method)]
         public void CheckFileSig_MatchFound(string fp)
         {
-            string res = FolderScanner.CheckFileSig(fp);
+            string res = Scanner.CheckFileSig(fp);
 
             Assert.IsFalse(res.Contains("no known file signature"));
         }
@@ -63,7 +63,7 @@ namespace FileCheckTest
         {
             string path = Path.Combine(_baseDir, $"..{d}..{d}..{d}TestFiles{d}ValidFiles{d}testfile2.jpg");
             
-            string res = FolderScanner.CheckFileSig(path);
+            string res = Scanner.CheckFileSig(path);
 
             Assert.IsFalse(res.Contains("no known file signature"));
         }

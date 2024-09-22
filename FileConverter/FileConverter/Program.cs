@@ -21,7 +21,7 @@ namespace FileChecker
                     case "1":
                         Console.Clear();
                         Console.Write("Paste or type the path to the file...");
-                        string res = FolderScanner.CheckFileSig(Console.ReadLine());
+                        string res = Scanner.CheckFileSig(Console.ReadLine());
 
                         Console.WriteLine("\n" + res);
                         Console.ReadKey();
@@ -34,7 +34,7 @@ namespace FileChecker
                         Console.WriteLine("Choose a directory to act as the root of the search.");
                         string dir = Console.ReadLine();
 
-                        List<string> scannedFiles = FolderScanner.ScanFolders(dir);
+                        List<string> scannedFiles = Scanner.ScanFolders(dir);
                         foreach (string file in scannedFiles)
                         {
                             Console.WriteLine(file);

@@ -8,7 +8,7 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace FileChecker
 {
-    public static class FolderScanner
+    public static class Scanner
     {
 
         public static List<string> ScanFolders(string currDir, List<string>? scannedDirs = null, List<string>? scannedFiles = null)
