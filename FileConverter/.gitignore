@@ -10,6 +10,13 @@
 *.userosscache
 *.sln.docstates
 
+# Manual entries
+*.futdcache.v2
+*.vsidx
+*dtbcache.v2
+*metadata.v5.2
+*project.v5.2
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
