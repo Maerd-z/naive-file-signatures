@@ -18,7 +18,7 @@
 
 ## Running the tests in CMD or PowerShell
 
-1. Open the folder where the project was extracted and go into FileConverter.
+1. Open the folder where the project was extracted and go into FileChecker.
 2. Copy the path from the top of the file explorer.
 3. Open PS and type ```cd "path/to/file"```. If you're using CMD type ```cd /D "path/to/file"```
 4. Run ```dotnet test```.
