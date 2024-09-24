@@ -15,8 +15,9 @@ namespace FileCheckTest
         public void ScanFolders_NestedFolders_FilesFound()
         {
             string startFolder = Path.Combine(_baseDir, @"..\..\..\TestFolders");
+            Scanner scanner = new Scanner(new FileWrapper());
 
-            List<string> scannedFiles = Scanner.ScanFolders(startFolder);
+            List<string> scannedFiles = scanner.ScanFolders(startFolder);
             Assert.IsTrue(scannedFiles.Contains("testfile2.jpg's signature matches JPG"));
         }
     }

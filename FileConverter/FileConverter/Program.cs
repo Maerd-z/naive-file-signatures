@@ -7,6 +7,7 @@ namespace FileChecker
     {
         static void Main(string[] args)
         {
+            Scanner _scanner = new Scanner(new FileWrapper());
             string inp = MainMenu();
 
             while (inp != "0")
@@ -21,7 +22,7 @@ namespace FileChecker
                     case "1":
                         Console.Clear();
                         Console.Write("Paste or type the path to the file...");
-                        string res = Scanner.CheckFileSig(Console.ReadLine());
+                        string res = _scanner.CheckFileSig(Console.ReadLine());
 
                         Console.WriteLine("\n" + res);
                         Console.ReadKey();
@@ -34,7 +35,7 @@ namespace FileChecker
                         Console.WriteLine("Choose a directory to act as the root of the search.");
                         string dir = Console.ReadLine();
 
-                        List<string> scannedFiles = Scanner.ScanFolders(dir);
+                        List<string> scannedFiles = _scanner.ScanFolders(dir);
                         foreach (string file in scannedFiles)
                         {
                             Console.WriteLine(file);

@@ -8,10 +8,15 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace FileChecker
 {
-    public static class Scanner
+    public class Scanner
     {
-
-        public static List<string> ScanFolders(string currDir, List<string>? scannedDirs = null, List<string>? scannedFiles = null)
+        readonly IFileWrapper _fw;
+        public Scanner(IFileWrapper fw)
+        {
+            _fw = fw;
+        }
+        
+        public List<string> ScanFolders(string currDir, List<string>? scannedDirs = null, List<string>? scannedFiles = null)
         {
             if (scannedDirs == null)
             {
@@ -54,7 +59,7 @@ namespace FileChecker
             return scannedFiles; 
         }
 
-        public static string CheckFileSig(string pathToFile)
+        public string CheckFileSig(string pathToFile)
         {
             Dictionary<string, string> fileSigs = new Dictionary<string, string>()
             {
@@ -81,7 +86,7 @@ namespace FileChecker
 
             byte[] rawBytes = new byte[32];
 
-            using (FileStream fs = File.OpenRead(pathToFile))
+            using (var fs = _fw.OpenRead(pathToFile))
             {
                 fs.Read(rawBytes, 0, rawBytes.Length);
             }
