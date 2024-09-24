@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileConverter\FileChecker.csproj" />
+    <ProjectReference Include="..\FileChecker\FileChecker.csproj" />
   </ItemGroup>
 
 </Project>
